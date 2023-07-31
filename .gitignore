@@ -1,2 +1,5 @@
-old/
+*.pyc
 .DS_Store
+
+old/
+creds.py
