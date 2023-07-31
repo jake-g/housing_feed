@@ -1,4 +1,2 @@
-imaplib
-email
 pandas
 beautifulsoup4 
