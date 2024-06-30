@@ -18,7 +18,10 @@ FROM_ALLOWED = [
 
 
 def save_emails_to_html(emails, html_filepath):
-    with open(html_filepath, 'w') as file:
+    with open(html_filepath, 'w', encoding='utf-8') as file:
+        # Convert content to UTF-8 and replace problematic characters
+        emails['html'] = emails['html'].str.encode(
+            'utf-8', 'replace').decode('utf-8')
         file.write(_html_header() + emails['html'].str.cat(sep='\n'))
 
 
