@@ -1,6 +1,15 @@
-*.pyc
-.DS_Store
 
+
+# Ignore Files
+credentials.py
+.env
+.DS_Store
+*.zip
+*.py[cod]
+
+# Ignore Directories
+.venv/
 old/
-creds.py
-*cache.tsv
+logs/
+.*_cache*
+__pycache__/

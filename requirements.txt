@@ -1,2 +1,10 @@
 pandas
-beautifulsoup4 
+beautifulsoup4
+pytest
+pytest-cov
+pre-commit
+types-beautifulsoup4
+tabulate
+matplotlib
+seaborn
+tqdm
