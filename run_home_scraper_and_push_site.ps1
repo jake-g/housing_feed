@@ -2,7 +2,7 @@ $PSScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition
 Set-Location $PSScriptRoot
 
 Write-Host "Running unit tests..."
-python -m pytest parse_html_test.py fetch_emails_test.py | Tee-Object -FilePath "logs/unit_tests.log"
+python -m pytest tests/ | Tee-Object -FilePath "logs/unit_tests.log"
 
 Write-Host "Running pre-commit checks..."
 pre-commit run --all-files
