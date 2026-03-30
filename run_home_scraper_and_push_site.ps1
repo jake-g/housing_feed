@@ -9,7 +9,7 @@ pip install --upgrade -r requirements.txt
 Write-Host "Running unit tests..." -ForegroundColor Cyan
 python -m pytest tests/ | Tee-Object -FilePath "logs\unit_tests.log"
 
-#Run pre-commit checks
+# Run pre-commit checks
 Write-Host "Running pre-commit checks..." -ForegroundColor Cyan
 pre-commit run --all-files
 
@@ -17,15 +17,11 @@ pre-commit run --all-files
 Write-Host "Fetching latest emails and generating HTML feed..." -ForegroundColor Cyan
 python fetch_emails.py
 
-# 4. Parse dataset and generate report
+# Parse dataset and generate report
 Write-Host "Parsing full HTML dataset to structured TSV..." -ForegroundColor Cyan
 python parse_html.py
 
-# 5. Your specific HTML generation script
-Write-Host "Generating final HTML..." -ForegroundColor Cyan
-python generate_html_from_housing_emails.py | Tee-Object -FilePath "generate_html_from_housing_emails.log"
-
-# 6. Git Operations
+# Git Operations
 Write-Host "Committing and pushing changes..." -ForegroundColor Yellow
 git add listings/*.html index.html housing_database.tsv *.md plots/*.png
 git commit -m "update site"
