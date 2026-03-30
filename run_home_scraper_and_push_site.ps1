@@ -2,6 +2,9 @@
 $Host.UI.RawUI.WindowTitle = "home-scraper"
 Set-Location "D:\Projects\_Projects_Synced\home-scraper"
 
+Write-Host "Updating dependencies..." -ForegroundColor Cyan
+pip install --upgrade -r requirements.txt
+
 # Run unit tests
 Write-Host "Running unit tests..." -ForegroundColor Cyan
 python -m pytest tests/ | Tee-Object -FilePath "logs\unit_tests.log"
